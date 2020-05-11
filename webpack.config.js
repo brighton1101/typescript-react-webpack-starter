@@ -59,12 +59,13 @@ module.exports = {
 
   output: {
     filename: 'bundle.js',
-    path: '/dist',
-    publicPath: '/dist'
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: path.resolve(__dirname, 'dist')
   },
 
   devServer: {
-    contentBase: './',
+    contentBase: path.join(__dirname, 'dist'),
+    writeToDisk: true,
     compress: true,
     port: 9000
   }
